@@ -1,4 +1,4 @@
-package com.example.tacoo;
+package com.example.tacoo.models;
 
 import java.util.ArrayList;
 import java.util.Date;

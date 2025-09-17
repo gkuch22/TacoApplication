@@ -1,8 +1,10 @@
-package com.example.tacoo;
+package com.example.tacoo.models;
 
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
+
+import com.example.tacoo.repositories.IngredientRepository;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient>{

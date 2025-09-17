@@ -1,4 +1,4 @@
-package com.example.tacoo;
+package com.example.tacoo.configurations;
 
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -6,13 +6,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import com.example.tacoo.Ingredient.Type;
+import com.example.tacoo.models.Ingredient;
+import com.example.tacoo.models.Ingredient.Type;
+import com.example.tacoo.repositories.IngredientRepository;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
 	
+	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("home");
+		registry.addViewController("/login");
 	}
 	
 	@Bean

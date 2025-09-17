@@ -1,4 +1,4 @@
-package com.example.tacoo;
+package com.example.tacoo.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+
+import com.example.tacoo.models.TacoOrder;
+import com.example.tacoo.repositories.OrderRepository;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +41,7 @@ public class OrderController {
 		
 //		log.info("order submitted: {}", order);
 		orderRepository.save(order);
+		
 		sessionStatus.setComplete();
 		return "redirect:/";
 	}

@@ -1,4 +1,4 @@
-package com.example.tacoo;
+package com.example.tacoo.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

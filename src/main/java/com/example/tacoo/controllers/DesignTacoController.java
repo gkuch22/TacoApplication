@@ -1,4 +1,4 @@
-package com.example.tacoo;
+package com.example.tacoo.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.example.tacoo.Ingredient.Type;
+import com.example.tacoo.models.Ingredient;
+import com.example.tacoo.models.Taco;
+import com.example.tacoo.models.TacoOrder;
+import com.example.tacoo.models.Ingredient.Type;
+import com.example.tacoo.repositories.IngredientRepository;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -78,8 +82,8 @@ public class DesignTacoController {
 		}
 		
 		tacoOrder.addTaco(taco);
-//		log.info("processing taco: {}", taco);
 		
+//		log.info("processing taco: {}", taco);
 		return "redirect:/orders/current";
 	}
 	
